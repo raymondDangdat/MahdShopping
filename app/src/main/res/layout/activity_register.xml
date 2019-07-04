@@ -6,18 +6,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Register">
+
 
     <TextView
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/signin"
+        android:text="Create Account"
         android:gravity="center_horizontal"
         android:textSize="25sp"
         android:textStyle="italic"
         android:textColor="@color/colorPrimary"
         />
+
 
     <LinearLayout
         android:gravity="center"
@@ -25,6 +27,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:textStyle="italic"
+            android:inputType="textPersonName"
+            android:textAlignment="center"/>
+        <EditText
+            android:id="@+id/editTextAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Adress"
+            android:textStyle="italic"
+            android:inputType="text"
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:textStyle="italic"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"/>
 
         <EditText
             android:id="@+id/editTextEmail"
@@ -44,24 +72,35 @@
             android:textStyle="italic"
             android:layout_marginTop="10dp"/>
 
-        <Button
-            android:id="@+id/btnLogin"
+        <EditText
+            android:id="@+id/editTextCPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign in"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textStyle="italic"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
             android:textColor="@android:color/white"
             android:background="@color/colorPrimary"
             android:layout_margin="10dp"/>
 
         <TextView
-            android:id="@+id/txtYetToRegister"
+            android:id="@+id/txtHaveAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Yet to sign up?"
+            android:text="Have account already?"
             android:gravity="center_horizontal"
             android:textColor="@color/colorPrimary"
             android:textStyle="italic"
             android:textSize="20sp"/>
 
     </LinearLayout>
+
 </LinearLayout>
