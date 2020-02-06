@@ -8,22 +8,28 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_marginTop="100dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/signin"
-        android:gravity="center_horizontal"
-        android:textSize="25sp"
-        android:textStyle="italic"
-        android:textColor="@color/colorPrimary"
-        />
+    <include
+        layout="@layout/app_bar_layout"
+        android:id="@+id/loginToolbar"/>
+
+
+    <!--<TextView-->
+        <!--android:layout_marginTop="100dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/signin"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:textSize="25sp"-->
+        <!--android:textStyle="italic"-->
+        <!--android:textColor="@color/colorPrimary"-->
+        <!--/>-->
 
     <LinearLayout
         android:gravity="center"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/loginandreg">
 
 
         <EditText
@@ -32,6 +38,7 @@
             android:layout_height="wrap_content"
             android:hint="Enter your email"
             android:textStyle="italic"
+            android:text="mahdshop@gmail.com"
             android:inputType="textEmailAddress"
             android:textAlignment="center"/>
         <EditText
@@ -41,8 +48,9 @@
             android:hint="Enter Password"
             android:inputType="textPassword"
             android:textAlignment="center"
+            android:text="mahdshop001"
             android:textStyle="italic"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="5dp"/>
 
         <Button
             android:id="@+id/btnLogin"
@@ -51,17 +59,20 @@
             android:text="Sign in"
             android:textColor="@android:color/white"
             android:background="@color/colorPrimary"
-            android:layout_margin="10dp"/>
+            android:layout_marginTop="50dp"/>
 
         <TextView
             android:id="@+id/txtYetToRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Yet to sign up?"
             android:gravity="center_horizontal"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="italic"
-            android:textSize="20sp"/>
+            android:text="Not a User Yet? Sign Up Here"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="150dp"/>
+
+
 
     </LinearLayout>
+
 </LinearLayout>

@@ -8,24 +8,28 @@
     android:layout_height="match_parent"
     tools:context=".Register">
 
+    <include
+        layout="@layout/app_bar_layout"
+        android:id="@+id/registerToolbar"/>
 
-    <TextView
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Create Account"
-        android:gravity="center_horizontal"
-        android:textSize="25sp"
-        android:textStyle="italic"
-        android:textColor="@color/colorPrimary"
-        />
 
 
     <LinearLayout
         android:gravity="center"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/loginandreg">
+
+        <TextView
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Account"
+            android:gravity="center_horizontal"
+            android:textSize="25sp"
+            android:textStyle="italic"
+            />
 
 
         <EditText
@@ -50,6 +54,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Phone Number"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"
             android:textStyle="italic"
             android:inputType="numberDecimal"
             android:textAlignment="center"/>
@@ -80,7 +86,7 @@
             android:inputType="textPassword"
             android:textAlignment="center"
             android:textStyle="italic"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="50dp"/>
 
         <Button
             android:id="@+id/btnSignUp"
@@ -88,16 +94,14 @@
             android:layout_height="wrap_content"
             android:text="Sign Up"
             android:textColor="@android:color/white"
-            android:background="@color/colorPrimary"
-            android:layout_margin="10dp"/>
+            android:background="@color/colorPrimary"/>
 
         <TextView
             android:id="@+id/txtHaveAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Have account already?"
+            android:text="Already a User? Login"
             android:gravity="center_horizontal"
-            android:textColor="@color/colorPrimary"
             android:textStyle="italic"
             android:textSize="20sp"/>
 

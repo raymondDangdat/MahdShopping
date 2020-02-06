@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ProgressDialog signInProgress;
 
+    private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         signInProgress = new ProgressDialog(this);
+
+        //initialize our toolBar
+        toolbar = findViewById(R.id.loginToolbar);
+        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Login Here");
+
 
 
         edtEmail = findViewById(R.id.editTextEmail);
@@ -78,9 +89,15 @@ public class MainActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 if (email.equals("mahdshop@gmail.com")){
-                                    startActivity(new Intent(MainActivity.this, AdminHome.class));
+                                    //logout
+                                    Intent signIn = new Intent(MainActivity.this, AdminHome.class);
+                                    signIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(signIn);
                                 }else {
-                                    startActivity(new Intent(MainActivity.this, UserHome.class));
+                                    //logout
+                                    Intent signIn = new Intent(MainActivity.this, UsersHome.class);
+                                    signIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(signIn);
                                 }
                             }
                         }

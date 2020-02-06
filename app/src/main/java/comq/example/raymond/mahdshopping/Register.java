@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,8 @@ public class Register extends AppCompatActivity {
     private EditText edtName, edtAddress, editEmail,edtPhone, edtPassword, edtCPassword;
     private TextView txtSignInActivity;
 
+    private Toolbar toolbar;
+
     //firebase
     private FirebaseAuth mAuth;
     private DatabaseReference database;
@@ -37,6 +40,15 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+
+        //initialize our toolBar
+        toolbar = findViewById(R.id.registerToolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Register Here");
+
 
 
         //find views
@@ -107,7 +119,11 @@ public class Register extends AppCompatActivity {
                                     public void onSuccess(Void aVoid) {
                                         regProgress.dismiss();
                                         Toast.makeText(Register.this, "Registration Completed", Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(Register.this, MainActivity.class));
+                                        //logout
+                                        Intent signIn = new Intent(Register.this, MainActivity.class);
+                                        signIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        startActivity(signIn);
+
                                     }
                                 }
                         ).addOnFailureListener(new OnFailureListener() {

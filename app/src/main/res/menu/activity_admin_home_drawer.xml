@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <!--<item-->
+            <!--android:id="@+id/nav_cart"-->
+            <!--android:icon="@drawable/ic_shopping_cart"-->
+            <!--android:title="Cart" />-->
+        <item
+            android:id="@+id/nav_add_frame"
+            android:icon="@drawable/ic_access_time_black_24dp"
+            android:title="Add Frame" />
+        <item
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/ic_access_time_black_24dp"
+            android:title="Orders" />
+        <item
+            android:id="@+id/nav_customer"
+            android:icon="@drawable/ic_access_time_black_24dp"
+            android:title="Feed Backs " />
+        <item
+            android:id="@+id/nav_sign_out"
+            android:icon="@drawable/ic_exit"
+            android:title="Sign out" />
+
+    </group>
+
+</menu>
